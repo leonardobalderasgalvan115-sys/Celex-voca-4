@@ -311,4 +311,810 @@
                     <div class="card-elevate bg-gray-50 rounded-2xl p-5 border border-gray-200 hover:border-ipn/40 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
-     
+                                <span class="text-xs font-bold uppercase bg-ipn-dark text-white px-2.5 py-1 rounded-md">Etapa 4</span>
+                                <span class="font-heading text-2xl font-extrabold text-ipn">6 Niveles</span>
+                            </div>
+                            <h4 class="font-heading font-bold text-lg text-gray-900 mb-2">Avanzados (1 al 6)</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Dominas el idioma a nivel profesional y técnico, debates temas complejos y te preparas para certificaciones internacionales que te servirán en nivel superior.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-200 text-xs font-semibold text-ipn">
+                            Niveles 12 al 17 • 12 meses (240 hrs)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculadora Interactiva de Avance -->
+                <div class="bg-gray-50 rounded-3xl border-2 border-ipn/20 p-6 sm:p-8 shadow-xs">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                        <div>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-ipn bg-white border border-ipn/20 px-3 py-1 rounded-full mb-2">
+                                <i data-lucide="calculator" class="w-3.5 h-3.5 text-ipn-gold"></i>
+                                <span>Calculadora Interactiva de Avance</span>
+                            </span>
+                            <h3 class="font-heading text-xl sm:text-2xl font-bold text-gray-900">
+                                Planifica tu recorrido en el CELEX
+                            </h3>
+                            <p class="text-sm text-gray-600">Elige tu nivel inicial y tu meta para calcular bimestres, meses y horas totales.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
+                        <div>
+                            <label for="calc-inicio" class="block text-sm font-bold text-gray-800 mb-2">
+                                1. Nivel en el que empiezas:
+                            </label>
+                            <select id="calc-inicio" class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-800 focus:border-ipn focus:ring-2 focus:ring-ipn/20 outline-none">
+                                <option value="1" selected>Nivel 1 — Introductorio (Nuevo ingreso desde cero)</option>
+                                <option value="2">Nivel 2 — Básico 1 (Con examen de colocación)</option>
+                                <option value="7">Nivel 7 — Intermedio 1 (Con examen de colocación)</option>
+                                <option value="12">Nivel 12 — Avanzado 1 (Con examen de colocación)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="calc-meta" class="block text-sm font-bold text-gray-800 mb-2">
+                                2. Meta a la que quieres llegar:
+                            </label>
+                            <select id="calc-meta" class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-800 focus:border-ipn focus:ring-2 focus:ring-ipn/20 outline-none">
+                                <option value="6">Terminar Básicos (Hasta Nivel 6)</option>
+                                <option value="11" selected>Terminar Intermedios (Hasta Nivel 11)</option>
+                                <option value="17">Completar todo el programa (Hasta Nivel 17 - Avanzado 6)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-ipn/15 p-5">
+                        <div class="grid grid-cols-3 gap-3 sm:gap-6 text-center mb-3">
+                            <div class="bg-ipn-soft/60 rounded-xl p-3 sm:p-4">
+                                <span class="text-xs text-gray-600 block">Bimestres / Niveles</span>
+                                <span id="out-bimestres" class="font-heading text-2xl sm:text-3xl font-extrabold text-ipn">11</span>
+                            </div>
+                            <div class="bg-ipn-soft/60 rounded-xl p-3 sm:p-4">
+                                <span class="text-xs text-gray-600 block">Duración total</span>
+                                <span id="out-meses" class="font-heading text-2xl sm:text-3xl font-extrabold text-ipn">22 meses</span>
+                            </div>
+                            <div class="bg-ipn-soft/60 rounded-xl p-3 sm:p-4">
+                                <span class="text-xs text-gray-600 block">Horas de estudio</span>
+                                <span id="out-horas" class="font-heading text-2xl sm:text-3xl font-extrabold text-ipn">440 hrs</span>
+                            </div>
+                        </div>
+                        <p id="out-nota" class="text-xs sm:text-sm text-center text-gray-700 font-medium">
+                            ¡Gran objetivo! Al cursar 11 niveles tendrás un inglés intermedio sólido antes de terminar la vocacional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECCIÓN DESTACADA: ¿DÓNDE Y CÓMO ME INSCRIBO? (CONVOCATORIA 2026) -->
+    <section id="inscripcion-pagos" class="py-12 sm:py-16 bg-gray-50 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Banner Oficial Convocatoria 2026 -->
+            <div class="bg-ipn text-white rounded-3xl p-6 sm:p-8 shadow-lg mb-10 border border-ipn-gold/40">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="max-w-2xl">
+                        <div class="inline-flex items-center gap-2 bg-white/15 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-ipn-gold mb-3">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            <span>Documento Oficial • INSCRIPCIÓN.pdf</span>
+                        </div>
+                        <h2 class="font-heading text-2xl sm:text-4xl font-extrabold leading-tight mb-2">
+                            ¿Dónde y cómo me inscribo? — Convocatoria 2026
+                        </h2>
+                        <p class="text-white/90 text-sm sm:text-base">
+                            <strong>Nuevo Ingreso Inglés: Introductorio (Curso Sabatino 8:00 a 13:30 HRS).</strong><br>
+                            Aquí tienes todos los requisitos, datos bancarios BBVA y pasos oficiales para asegurar tu lugar sin errores.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+                        <button type="button" id="btn-abrir-convocatoria" class="inline-flex items-center justify-center gap-2 bg-white text-ipn hover:bg-gray-100 font-bold px-5 py-3 rounded-xl text-sm shadow-md transition-all">
+                            <i data-lucide="eye" class="w-4 h-4"></i>
+                            <span>Ver Convocatoria Oficial completa</span>
+                        </button>
+                        <button type="button" id="btn-imprimir-convocatoria" class="inline-flex items-center justify-center gap-2 bg-ipn-dark hover:bg-black/40 text-white border border-white/30 font-semibold px-5 py-3 rounded-xl text-sm transition-all">
+                            <i data-lucide="printer" class="w-4 h-4 text-ipn-gold"></i>
+                            <span>Imprimir / Guardar resumen PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requisitos de Edad y Estudios + Alerta de Pago -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
+                <!-- Requisitos de Ingreso -->
+                <div class="lg:col-span-5 bg-white rounded-2xl p-6 border border-gray-200 shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-ipn-soft text-ipn flex items-center justify-center shrink-0">
+                                <i data-lucide="user-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-gray-900">¿Quiénes pueden inscribirse?</h3>
+                                <p class="text-xs text-ipn font-semibold">Convocatoria abierta cada bimestre</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-gray-700">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-ipn shrink-0 mt-0.5"></i>
+                                <span><strong>Edad y escolaridad:</strong> Tener <strong>15 años cumplidos y/o la secundaria terminada</strong> al momento de la inscripción.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-ipn shrink-0 mt-0.5"></i>
+                                <span><strong>Comunidad Interna IPN y Público General:</strong> Pueden inscribirse tanto alumnos de Voca 4 y del IPN como personas externas que cumplan con la edad/secundaria terminada.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-ipn shrink-0 mt-0.5"></i>
+                                <span><strong>Dónde se entregan papeles:</strong> En la <strong>Coordinación de CELEX del CECyT No. 4</strong> de <strong>09:00 a 20:30 horas</strong> (si el alumno no puede ir, el trámite puede realizarlo su tutor).</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-gray-100 bg-ipn-soft/60 rounded-xl p-3.5 text-xs text-gray-700">
+                        <strong class="text-ipn">Documentos físicos a entregar:</strong><br>
+                        1. Comprobante de pago original sellado por Servicios Financieros (+3 copias).<br>
+                        2. CURP.<br>
+                        3. INE del tutor (o del alumno en caso de ser mayor de edad).
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Datos Bancarios BBVA y Costos -->
+                <div class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-7 border-2 border-ipn/25 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-ipn text-white flex items-center justify-center font-heading font-extrabold text-sm shrink-0">
+                                BBVA
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg sm:text-xl text-gray-900">Información de Pago Oficial</h3>
+                                <p class="text-xs text-gray-500">Pago en Practicaja (opción "Pago de Servicios") o Ventanilla</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold bg-ipn-soft text-ipn px-3 py-1 rounded-full border border-ipn/20">
+                            Solo efectivo en banco
+                        </span>
+                    </div>
+
+                    <!-- Convenio y Referencia con botones de copia rápida -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-5">
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-3.5 flex items-center justify-between">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-500 block">Convenio BBVA</span>
+                                <span id="txt-convenio" class="font-heading text-xl font-extrabold text-ipn tracking-wide">2337274</span>
+                            </div>
+                            <button type="button" onclick="copiarDato('2337274', 'Convenio 2337274')" class="inline-flex items-center gap-1.5 bg-white hover:bg-ipn-soft text-ipn border border-ipn/25 text-xs font-bold px-3 py-2 rounded-lg transition-colors">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                <span>Copiar</span>
+                            </button>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-3.5 flex items-center justify-between">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-500 block">Referencia</span>
+                                <span id="txt-referencia" class="font-heading text-xl font-extrabold text-ipn tracking-wide">2340001326</span>
+                            </div>
+                            <button type="button" onclick="copiarDato('2340001326', 'Referencia 2340001326')" class="inline-flex items-center gap-1.5 bg-white hover:bg-ipn-soft text-ipn border border-ipn/25 text-xs font-bold px-3 py-2 rounded-lg transition-colors">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                <span>Copiar</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Costos Diferenciados -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                        <div class="rounded-xl border-2 border-ipn bg-ipn-soft/40 p-4">
+                            <div class="flex items-baseline justify-between mb-1">
+                                <span class="text-xs font-bold uppercase text-ipn">Comunidad Politécnica</span>
+                                <span class="font-heading text-2xl font-extrabold text-ipn">$620</span>
+                            </div>
+                            <p class="text-[11px] text-gray-600 mb-2">(Seiscientos veinte pesos MXN)</p>
+                            <ul class="text-xs text-gray-700 space-y-1">
+                                <li>• Alumnos regulares del CECyT 4</li>
+                                <li>• Alumnos regulares nivel medio superior IPN</li>
+                                <li>• Egresados IPN (con credencial)</li>
+                                <li>• Alumnos de Superior y Posgrado IPN</li>
+                            </ul>
+                        </div>
+
+                        <div class="rounded-xl border border-gray-300 bg-gray-50 p-4">
+                            <div class="flex items-baseline justify-between mb-1">
+                                <span class="text-xs font-bold uppercase text-gray-700">Público General / Externa</span>
+                                <span class="font-heading text-2xl font-extrabold text-gray-900">$1,600</span>
+                            </div>
+                            <p class="text-[11px] text-gray-600 mb-2">(Mil seiscientos pesos MXN)</p>
+                            <ul class="text-xs text-gray-700 space-y-1">
+                                <li>• Alumnos dictaminados nivel medio superior</li>
+                                <li>• Alumnos externos del IPN / Público general</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Alerta Roja/Guinda Muy Visible -->
+                    <div class="bg-red-50 border-2 border-red-600 rounded-xl p-4 flex items-start gap-3">
+                        <i data-lucide="alert-octagon" class="w-6 h-6 text-red-600 shrink-0 mt-0.5"></i>
+                        <div class="text-xs sm:text-sm text-red-950 leading-relaxed">
+                            <p class="font-extrabold uppercase text-red-700 mb-0.5">
+                                ¡NO SE ACEPTAN TRANSFERENCIAS NI PAGOS CON TARJETAS!
+                            </p>
+                            <p>
+                                Únicamente se aceptarán y sellarán los <strong>comprobantes originales</strong> de los depósitos realizados en efectivo directamente en <strong>PRACTICAJA</strong> (opción Pago de Servicios) o <strong>VENTANILLA</strong> de BBVA.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROCESO DE INSCRIPCIÓN PASO A PASO (6 PASOS EXACTOS) -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xs mb-8">
+                <div class="max-w-3xl mb-8">
+                    <span class="text-ipn font-bold text-xs uppercase tracking-wider bg-ipn-soft px-3 py-1 rounded-full">
+                        Guía Oficial • Sigue el orden exacto
+                    </span>
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold text-gray-900 mt-3 mb-2">
+                        Proceso de Inscripción Paso a Paso
+                    </h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        Para que no te regresen en ventanilla ni pierdas tu lugar, realiza estos <strong>6 pasos en este orden</strong>:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Paso 1 -->
+                    <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200 relative">
+                        <div class="w-9 h-9 rounded-full bg-ipn text-white font-heading font-bold flex items-center justify-center text-sm mb-3 shadow-xs">
+                            1
+                        </div>
+                        <h4 class="font-heading font-bold text-gray-900 text-base mb-1.5">
+                            Identifica tu tarifa
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Verifica si eres alumno interno IPN (<strong>$620</strong>) o externo / dictaminado (<strong>$1,600</strong>) para pagar el monto exacto.
+                        </p>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200 relative">
+                        <div class="w-9 h-9 rounded-full bg-ipn text-white font-heading font-bold flex items-center justify-center text-sm mb-3 shadow-xs">
+                            2
+                        </div>
+                        <h4 class="font-heading font-bold text-gray-900 text-base mb-1.5">
+                            Paga en BBVA (Efectivo)
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Acude a BBVA y paga en <strong>ventanilla/caja</strong> o en <strong>practicaja</strong> (opción <em>Pago de Servicios</em>) con el Convenio <strong>2337274</strong> y Referencia <strong>2340001326</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200 relative">
+                        <div class="w-9 h-9 rounded-full bg-ipn text-white font-heading font-bold flex items-center justify-center text-sm mb-3 shadow-xs">
+                            3
+                        </div>
+                        <h4 class="font-heading font-bold text-gray-900 text-base mb-1.5">
+                            Reúne tus documentos
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Prepara tu <strong>comprobante de pago original + 3 copias</strong>, tu <strong>CURP</strong> y la <strong>INE del tutor</strong> (o tuya si ya eres mayor de edad).
+                        </p>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="bg-gray-50 rounded-2xl p-5 border-2 border-ipn/30 relative">
+                        <div class="w-9 h-9 rounded-full bg-ipn text-white font-heading font-bold flex items-center justify-center text-sm mb-3 shadow-xs">
+                            4
+                        </div>
+                        <h4 class="font-heading font-bold text-gray-900 text-base mb-1.5">
+                            Sella tu pago en Servicios Financieros
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-2">
+                            Ve al CECyT 4 al área de <strong>Servicios Financieros</strong> con el voucher original y las 3 copias para que lo validen y sellen.
+                        </p>
+                        <div class="bg-white border border-gray-200 rounded-lg p-2.5 text-xs text-gray-700">
+                            <strong class="text-ipn">Anota a mano en el original y en las 3 copias:</strong><br>
+                            • Nombre completo • Correo • Teléfono celular
+                        </div>
+                    </div>
+
+                    <!-- Paso 5 -->
+                    <div class="bg-gray-50 rounded-2xl p-5 border-2 border-ipn/30 relative">
+                        <div class="w-9 h-9 rounded-full bg-ipn text-white font-heading font-bold flex items-center justify-center text-sm mb-3 shadow-xs">
+                            5
+                        </div>
+                        <h4 class="font-heading font-bold text-gray-900 text-base mb-1.5">
+                            Llena el formulario y sube tus PDF
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Escanea el QR oficial de la convocatoria o abre su enlace, llena tus datos y sube tus documentos en <strong>formato PDF</strong> (incluyendo el comprobante ya sellado). <em>*Obligatorio.</em>
+                        </p>
+                    </div>
+
+                    <!-- Paso 6 -->
+                    <div class="bg-gray-50 rounded-2xl p-5 border-2 border-ipn/30 relative">
+                        <div class="w-9 h-9 rounded-full bg-ipn text-white font-heading font-bold flex items-center justify-center text-sm mb-3 shadow-xs">
+                            6
+                        </div>
+                        <h4 class="font-heading font-bold text-gray-900 text-base mb-1.5">
+                            Entrega física en Oficina CELEX
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Acude a la <strong>Coordinación de CELEX del CECyT No. 4</strong> (<strong>09:00 a 20:30 hrs</strong>; puede ir tu tutor) para entregar tus papeles físicos, llenar tu ficha de datos y recibir tu grupo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aviso Importante de Asignación de Grupo -->
+            <div class="bg-amber-50 border-2 border-ipn-gold rounded-2xl p-5 sm:p-6 flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-ipn-gold/20 text-ipn-dark flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-heading font-extrabold text-ipn-dark text-base sm:text-lg uppercase mb-1">
+                        ¡Importante sobre la asignación de grupo!
+                    </h4>
+                    <p class="text-sm text-gray-800 leading-relaxed">
+                        Si no llevas a cabo la entrega de tu documentación en los días indicados en la convocatoria vigente, <strong>"No será posible asignarte grupo"</strong>. Recuerda que <strong>la asignación de grupo se realiza conforme al tiempo/orden en que entregas tu documentación y comprobantes de pago</strong>, y llenar el formulario digital adjuntando tus documentos en PDF es <strong>obligatorio</strong> para completar tu inscripción.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN: HORARIOS Y PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="horarios-faq" class="py-12 sm:py-16 bg-white border-t border-gray-200 scroll-mt-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-ipn font-bold text-xs uppercase tracking-wider bg-ipn-soft px-3 py-1 rounded-full">
+                    Horarios y Dudas Comunes
+                </span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-gray-900 mt-3 mb-2">
+                    Preguntas Frecuentes de Nuevo Ingreso
+                </h2>
+                <p class="text-sm sm:text-base text-gray-600">
+                    Resolvemos las dudas más habituales sobre horarios de clase, ventanilla, pagos y requisitos.
+                </p>
+            </div>
+
+            <!-- Resumen visual de los dos horarios clave -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div class="bg-ipn-soft/60 border border-ipn/20 rounded-2xl p-4 flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-ipn text-white flex items-center justify-center shrink-0">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase text-ipn">Horario de Clases (Sabatino)</p>
+                        <p class="font-heading font-bold text-gray-900 text-base">Sábados de 8:00 a 13:30 HRS</p>
+                    </div>
+                </div>
+
+                <div class="bg-ipn-soft/60 border border-ipn/20 rounded-2xl p-4 flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-ipn-dark text-white flex items-center justify-center shrink-0">
+                        <i data-lucide="building-2" class="w-5 h-5 text-ipn-gold"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase text-ipn">Entrega de Documentos en Oficina</p>
+                        <p class="font-heading font-bold text-gray-900 text-base">09:00 a 20:30 HRS (Coordinación CELEX)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeón FAQ -->
+            <div class="space-y-3" id="accordion-faq">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left bg-gray-50 hover:bg-gray-100/80 transition-colors">
+                        <span class="font-heading font-semibold text-gray-900 text-sm sm:text-base pr-4">
+                            ¿Qué pasa si pago por transferencia bancaria o con tarjeta?
+                        </span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-ipn shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-panel hidden p-5 bg-white text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+                        <strong>No te lo van a aceptar ni a sellar.</strong> La convocatoria indica estrictamente que <strong>no se aceptan transferencias ni pagos con tarjetas</strong>. Debes acudir físicamente a BBVA y pagar en efectivo en <strong>Practicaja</strong> (opción <em>Pago de Servicios</em>) o directamente en <strong>Ventanilla/Caja</strong> para obtener el ticket/comprobante original.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left bg-gray-50 hover:bg-gray-100/80 transition-colors">
+                        <span class="font-heading font-semibold text-gray-900 text-sm sm:text-base pr-4">
+                            ¿Puede ir mi mamá, papá o tutor a entregar mis papeles?
+                        </span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-ipn shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-panel hidden p-5 bg-white text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+                        <strong>¡Sí!</strong> La convocatoria oficial especifica que, en caso de que el alumno no pueda presentarse en la Coordinación de CELEX del CECyT No. 4 (horario de 09:00 a 20:30 horas), <strong>el trámite puede realizarlo su tutor</strong> llevando todos los documentos completos y el comprobante ya sellado por Servicios Financieros.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left bg-gray-50 hover:bg-gray-100/80 transition-colors">
+                        <span class="font-heading font-semibold text-gray-900 text-sm sm:text-base pr-4">
+                            ¿Qué pasa si tengo 14 o 15 años al inscribirme?
+                        </span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-ipn shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-panel hidden p-5 bg-white text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+                        Si ya eres alumno de nuevo ingreso en Voca 4, <strong>ya cuentas con tu secundaria terminada</strong>, por lo que cumples con el requisito de la Convocatoria 2026 (<em>"tener 15 años cumplidos y/o la secundaria terminada al momento de la inscripción"</em>). Además, al ser menor de edad, recuerda incluir la copia de la <strong>INE de tu tutor</strong> en tus documentos.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left bg-gray-50 hover:bg-gray-100/80 transition-colors">
+                        <span class="font-heading font-semibold text-gray-900 text-sm sm:text-base pr-4">
+                            ¿Cuándo abren las inscripciones y qué pasa si ya sé algo de inglés?
+                        </span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-ipn shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-panel hidden p-5 bg-white text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+                        Las inscripciones abren <strong>cada bimestre</strong> (cada 2 meses). Si eres nuevo ingreso sin experiencia previa, entras directo al nivel <strong>Introductorio</strong> siguiendo los 6 pasos. Si ya estudiaste inglés antes, pregunta en la Coordinación de CELEX por las fechas de <strong>examen de colocación</strong> para ubicarte en el nivel adecuado.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GENERADOR DE CÓDIGO QR PARA EL PROYECTO -->
+    <section id="codigo-qr" class="py-12 sm:py-16 bg-ipn-soft/60 border-t border-ipn/15 scroll-mt-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-ipn/20 shadow-sm flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold text-ipn bg-ipn-soft px-3 py-1 rounded-full mb-3">
+                        <i data-lucide="qr-code" class="w-3.5 h-3.5 text-ipn-gold"></i>
+                        <span>Comparte esta Guía Digital</span>
+                    </span>
+                    <h3 class="font-heading text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                        Generador de Código QR Institucional
+                    </h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                        Una vez que subas esta página web a internet (por ejemplo en <strong>Netlify</strong> o <strong>GitHub Pages</strong>), pega aquí tu enlace publicado para generar el código QR en color guinda y descargarlo para tu cartel o exposición escolar.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-2.5 mb-3">
+                        <input type="url" id="input-qr-url" placeholder="Pega aquí tu enlace (ej. https://celex-voca4.netlify.app)" class="flex-1 rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:border-ipn focus:ring-2 focus:ring-ipn/20 outline-none">
+                        <button type="button" id="btn-generar-qr" class="bg-ipn hover:bg-ipn-dark text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-colors shrink-0">
+                            Generar QR
+                        </button>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button type="button" id="btn-descargar-qr" class="inline-flex items-center gap-1.5 text-xs font-bold text-ipn bg-ipn-soft hover:bg-ipn hover:text-white border border-ipn/25 px-3.5 py-2 rounded-lg transition-colors">
+                            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                            <span>Descargar QR en PNG</span>
+                        </button>
+                        <span id="qr-status" class="text-xs text-gray-500">Mostrando QR de vista previa</span>
+                    </div>
+                </div>
+
+                <!-- Contenedor del Código QR -->
+                <div class="flex flex-col items-center bg-gray-50 p-5 rounded-2xl border border-gray-200 shrink-0">
+                    <div id="qr-box" class="bg-white p-3 rounded-xl shadow-xs flex items-center justify-center min-w-[164px] min-h-[164px]"></div>
+                    <span class="text-xs font-bold text-ipn mt-3">CELEX CECyT No. 4</span>
+                    <span class="text-[11px] text-gray-500">Escanea desde tu celular</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PIE DE PÁGINA INSTITUCIONAL -->
+    <footer class="bg-ipn-dark text-white py-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-white/15">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-2">
+                        <span class="bg-white text-ipn font-heading font-extrabold px-2.5 py-1 rounded-lg text-xs">IPN</span>
+                        <span class="font-heading font-bold text-base sm:text-lg">CECyT No. 4 "Lázaro Cárdenas" • CELEX</span>
+                    </div>
+                    <p class="text-white/80 text-xs sm:text-sm max-w-lg leading-relaxed">
+                        Cursos Extracurriculares de Lenguas Extranjeras. Guía informativa de nuevo ingreso basada en la Convocatoria 2026 oficial del plantel.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 border border-ipn-gold/30 rounded-xl p-4 text-xs sm:text-sm">
+                    <p class="font-bold text-ipn-gold mb-1">Créditos del Proyecto Escolar</p>
+                    <p class="text-white/90">Plantel: CECyT No. 4 "Lázaro Cárdenas" (Voca 4)</p>
+                    <p class="text-white/80">Proyecto académico informativo • Alumno(s) de Nuevo Ingreso</p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-white/65 gap-2">
+                <p>"La Técnica al Servicio de la Patria" — Instituto Politécnico Nacional</p>
+                <a href="#inicio" class="text-white/85 hover:text-white underline">Volver al inicio ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE LA CONVOCATORIA OFICIAL COMPLETA (INSCRIPCIÓN.pdf) -->
+    <div id="modal-convocatoria" class="fixed inset-0 z-50 hidden bg-black/65 backdrop-blur-xs overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden my-6">
+            <!-- Barra superior del modal -->
+            <div class="bg-ipn text-white px-6 py-4 flex items-center justify-between no-print">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="file-text" class="w-5 h-5 text-ipn-gold"></i>
+                    <span class="font-heading font-bold text-sm sm:text-base">Convocatoria Oficial 2026 — INSCRIPCIÓN.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="window.print()" class="inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        <span>Imprimir / PDF</span>
+                    </button>
+                    <button type="button" id="btn-cerrar-modal" aria-label="Cerrar ventana" class="p-1.5 rounded-lg hover:bg-white/15 text-white">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenido estructurado fiel al documento INSCRIPCIÓN.pdf -->
+            <div class="p-6 sm:p-8 space-y-6 text-gray-800">
+                <div class="text-center border-b-2 border-ipn pb-4">
+                    <p class="text-xs font-bold tracking-widest text-ipn uppercase">Instituto Politécnico Nacional</p>
+                    <h3 class="font-heading text-xl sm:text-2xl font-extrabold text-gray-900">CECyT No. 4 "Lázaro Cárdenas"</h3>
+                    <p class="text-sm font-semibold text-ipn">Cursos Extracurriculares de Lenguas Extranjeras (CELEX)</p>
+                    <div class="mt-2 inline-block bg-ipn text-white text-xs font-bold px-3 py-1 rounded-full">
+                        CONVOCATORIA 2026 • CURSO SABATINO DE INGLÉS
+                    </div>
+                    <p class="text-sm font-bold text-gray-900 mt-2">NUEVO INGRESO INGLÉS: INTRODUCTORIO • Horario: 8:00 a 13:30 HRS</p>
+                </div>
+
+                <!-- Página 1: Requisitos -->
+                <div>
+                    <h4 class="font-heading font-bold text-ipn text-base uppercase mb-2">1. Requisitos para Inscripción</h4>
+                    <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-700">
+                        <li>Tener <strong>15 años cumplidos y/o la secundaria terminada</strong> al momento de la inscripción.</li>
+                        <li>Adjuntar sus documentos al <strong>formulario correspondiente de INSCRIPCIÓN</strong>.</li>
+                        <li>Entregar la documentación física en la <strong>Coordinación de CELEX del CECyT No. 4</strong> en horario de <strong>09:00 a 20:30 horas</strong> (si el alumno no puede presentarse, puede realizar el trámite su tutor).</li>
+                        <li><strong>Documentos solicitados:</strong> Comprobante de pago sellado por Servicios Financieros (+ 3 copias), CURP, e INE del tutor (o del alumno en caso de ser mayor de edad).</li>
+                    </ul>
+                </div>
+
+                <!-- Página 2: Información de Pago -->
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200">
+                    <h4 class="font-heading font-bold text-ipn text-base uppercase mb-2">2. Información de Pago (BBVA)</h4>
+                    <p class="text-sm mb-2"><strong>Pago en Practicaja (opción Pago de Servicios) o Ventanilla:</strong></p>
+                    <div class="grid grid-cols-2 gap-3 text-sm mb-3">
+                        <div class="bg-white p-2.5 rounded-lg border border-gray-200">
+                            <span class="text-xs text-gray-500 block">CONVENIO</span>
+                            <strong class="text-ipn text-base">2337274</strong>
+                        </div>
+                        <div class="bg-white p-2.5 rounded-lg border border-gray-200">
+                            <span class="text-xs text-gray-500 block">REFERENCIA</span>
+                            <strong class="text-ipn text-base">2340001326</strong>
+                        </div>
+                    </div>
+                    <p class="text-sm"><strong>• Comunidad Politécnica: $620.00</strong> (Alumnos regulares CECyT 4, nivel medio superior IPN, egresados con credencial, superior y posgrado IPN).</p>
+                    <p class="text-sm mt-1"><strong>• Público General / Comunidad Externa: $1,600.00</strong> (Alumnos dictaminados nivel medio superior y externos del IPN).</p>
+                    <p class="text-xs font-extrabold text-red-700 mt-2">
+                        NO SE ACEPTAN TRANSFERENCIAS NI PAGOS CON TARJETAS. Únicamente comprobantes originales de Practicaja o Ventanilla.
+                    </p>
+                </div>
+
+                <!-- Página 3: Proceso Paso a Paso -->
+                <div>
+                    <h4 class="font-heading font-bold text-ipn text-base uppercase mb-2">3. Proceso de Inscripción Paso a Paso</h4>
+                    <ol class="list-decimal pl-5 space-y-1.5 text-sm text-gray-700">
+                        <li>Identifica si eres alumno interno ($620) o externo ($1,600).</li>
+                        <li>Acude a BBVA y realiza el pago en ventanilla/caja o practicaja (opción pago de servicios).</li>
+                        <li>Reúne tus documentos para entregar en oficina CELEX y subir al formulario.</li>
+                        <li>Acude al CECyT 4 a <strong>Servicios Financieros</strong> para validar y sellar tu pago con las 3 copias del voucher (anota a mano en original y copias: <em>Nombre completo, Correo y Teléfono celular</em>).</li>
+                        <li>Escanea el QR o abre el enlace al formulario oficial para llenar tus datos y subir tus documentos en <strong>formato PDF</strong> (obligatorio).</li>
+                        <li>Entrega tus documentos de forma física en la oficina de CELEX (09:00 a 20:30 hrs) para llenar tu ficha de datos y asignación de grupo conforme al orden de entrega.</li>
+                    </ol>
+                </div>
+
+                <!-- Nota para adjuntar su PDF real al subir la web -->
+                <div class="bg-ipn-soft border border-ipn/20 rounded-xl p-3.5 text-xs text-gray-700 no-print">
+                    <strong class="text-ipn">Nota para tu proyecto web:</strong> Si subes esta página a Netlify o GitHub Pages junto con el archivo original <code>INSCRIPCIÓN.pdf</code> en la misma carpeta, también podrás enlazarlo directamente como descarga.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE INTERACTIVIDAD -->
+    <script>
+        // Inicializar iconos Lucide
+        lucide.createIcons();
+
+        // Notificación Toast
+        let toastTimer;
+        function mostrarToast(mensaje) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.textContent = mensaje;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 2600);
+        }
+
+        // Copiar Convenio / Referencia al portapapeles (con fallback seguro)
+        function copiarDato(texto, etiqueta) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(texto).then(() => {
+                    mostrarToast(`${etiqueta} copiado al portapapeles`);
+                }).catch(() => copiarFallback(texto, etiqueta));
+            } else {
+                copiarFallback(texto, etiqueta);
+            }
+        }
+
+        function copiarFallback(texto, etiqueta) {
+            const temp = document.createElement('textarea');
+            temp.value = texto;
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+                document.execCommand('copy');
+                mostrarToast(`${etiqueta} copiado al portapapeles`);
+            } catch (err) {
+                mostrarToast(`Dato: ${texto}`);
+            }
+            document.body.removeChild(temp);
+        }
+
+        // Menú móvil
+        const btnMobile = document.getElementById('btn-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        btnMobile.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Calculadora interactiva de avance (2 meses y 40 horas por nivel)
+        const calcInicio = document.getElementById('calc-inicio');
+        const calcMeta = document.getElementById('calc-meta');
+        const outBimestres = document.getElementById('out-bimestres');
+        const outMeses = document.getElementById('out-meses');
+        const outHoras = document.getElementById('out-horas');
+        const outNota = document.getElementById('out-nota');
+
+        function recalcularAvance() {
+            const ini = parseInt(calcInicio.value, 10);
+            const fin = parseInt(calcMeta.value, 10);
+
+            if (fin < ini) {
+                outBimestres.textContent = '0';
+                outMeses.textContent = '0 meses';
+                outHoras.textContent = '0 hrs';
+                outNota.textContent = 'Ya superaste ese nivel según tu punto de partida. Selecciona una meta superior.';
+                return;
+            }
+
+            const niveles = (fin - ini) + 1;
+            const meses = niveles * 2;
+            const horas = niveles * 40;
+
+            outBimestres.textContent = niveles;
+            outMeses.textContent = `${meses} meses`;
+            outHoras.textContent = `${horas} hrs`;
+
+            if (fin === 6) {
+                outNota.textContent = '¡Buen inicio! Al concluir los 5 niveles básicos podrás comunicarte en situaciones cotidianas.';
+            } else if (fin === 11) {
+                outNota.textContent = '¡Gran objetivo! Al cursar estos niveles tendrás un inglés intermedio sólido antes de egresar de Voca 4.';
+            } else {
+                outNota.textContent = '¡Meta completa! Concluirás los 17 niveles y dominarás el idioma a nivel profesional.';
+            }
+        }
+
+        calcInicio.addEventListener('change', recalcularAvance);
+        calcMeta.addEventListener('change', recalcularAvance);
+        recalcularAvance();
+
+        // Modal Convocatoria Oficial
+        const modal = document.getElementById('modal-convocatoria');
+        document.getElementById('btn-abrir-convocatoria').addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        document.getElementById('btn-imprimir-convocatoria').addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            setTimeout(() => window.print(), 150);
+        });
+        document.getElementById('btn-cerrar-modal').addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Acordeón FAQ
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const panel = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                const abierto = !panel.classList.contains('hidden');
+
+                document.querySelectorAll('.faq-panel').forEach(p => p.classList.add('hidden'));
+                document.querySelectorAll('.faq-toggle i').forEach(i => i.classList.remove('rotate-180'));
+
+                if (!abierto) {
+                    panel.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // Generador y Descarga de Código QR con respaldo visual
+        const qrBox = document.getElementById('qr-box');
+        const inputQrUrl = document.getElementById('input-qr-url');
+        const btnGenerarQr = document.getElementById('btn-generar-qr');
+        const btnDescargarQr = document.getElementById('btn-descargar-qr');
+        const qrStatus = document.getElementById('qr-status');
+
+        function renderizarQR(urlDestino) {
+            qrBox.innerHTML = '';
+            if (typeof QRCode !== 'undefined') {
+                new QRCode(qrBox, {
+                    text: urlDestino,
+                    width: 148,
+                    height: 148,
+                    colorDark: '#6C1D45',
+                    colorLight: '#FFFFFF',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            } else {
+                // Respaldo visual SVG si falla el CDN externo
+                const img = document.createElement('img');
+                img.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=6C1D45&data=${encodeURIComponent(urlDestino)}`;
+                img.alt = 'Código QR CELEX CECyT 4';
+                img.className = 'w-[148px] h-[148px]';
+                qrBox.appendChild(img);
+            }
+        }
+
+        // URL inicial automática (toma la URL real si ya está publicada o el portal del CECyT 4)
+        const urlInicial = window.location.protocol.startsWith('http')
+            ? window.location.href
+            : 'https://www.cecyt4.ipn.mx/';
+        renderizarQR(urlInicial);
+        if (window.location.protocol.startsWith('http')) {
+            inputQrUrl.value = window.location.href;
+            qrStatus.textContent = 'QR listo con el enlace actual de esta página';
+        }
+
+        btnGenerarQr.addEventListener('click', () => {
+            const val = inputQrUrl.value.trim();
+            if (!val) {
+                mostrarToast('Pega primero un enlace web válido');
+                inputQrUrl.focus();
+                return;
+            }
+            const urlFormateada = val.startsWith('http://') || val.startsWith('https://') ? val : `https://${val}`;
+            renderizarQR(urlFormateada);
+            qrStatus.textContent = '¡Código QR actualizado en color guinda!';
+            qrStatus.classList.add('text-ipn', 'font-semibold');
+            mostrarToast('Código QR generado correctamente');
+        });
+
+        btnDescargarQr.addEventListener('click', () => {
+            const canvas = qrBox.querySelector('canvas');
+            const img = qrBox.querySelector('img');
+            const enlaceDescarga = document.createElement('a');
+            enlaceDescarga.download = 'QR-CELEX-CECyT4.png';
+
+            if (canvas) {
+                enlaceDescarga.href = canvas.toDataURL('image/png');
+                enlaceDescarga.click();
+                mostrarToast('Descargando QR-CELEX-CECyT4.png');
+            } else if (img && img.src) {
+                enlaceDescarga.href = img.src;
+                enlaceDescarga.target = '_blank';
+                enlaceDescarga.click();
+            }
+        });
+    </script>
+</body>
+</html>
+```
