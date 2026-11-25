@@ -1,315 +1,277 @@
-```html
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CELEX CECyT No. 4 "Lázaro Cárdenas" | Guía e Inscripción 2026</title>
-    <!-- Tailwind CSS para diseño adaptable y estilos institucionales -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tipografías Poppins y Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Iconos Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        // Configuración de colores institucionales guinda (#581332 / #6B1D42) y blanco
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ipn: {
-                            DEFAULT: '#6B1D42',
-                            dark: '#581332',
-                            light: '#852452',
-                            soft: '#FDF2F7',
-                            gold: '#B38E5D'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Fondo institucional degradado guinda y textura sutil */
-        .hero-gradient {
-            background: linear-gradient(135deg, #6B1D42 0%, #581332 65%, #3D0B22 100%);
-            position: relative;
-        }
-        .hero-dots {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 22px 22px;
-        }
-        .card-elevate {
-            transition: transform 0.22s ease, box-shadow 0.22s ease;
-        }
-        .card-elevate:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 26px -8px rgba(88, 19, 50, 0.16);
-        }
-        /* Reglas de impresión para guardar o imprimir la convocatoria en PDF */
-        @media print {
-            body * { visibility: hidden; }
-            #modal-convocatoria, #modal-convocatoria * { visibility: visible; }
-            #modal-convocatoria {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                background: white !important;
-                padding: 0 !important;
-            }
-            .no-print { display: none !important; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CELEX CECyT No. 4 — Convocatoria 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ipn: #6C1D45; --ipn-d: #4E1230; --ipn-s: #F7EEF2; --gold: #9A7B3E; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #1f2937; }
+    .bg-ipn { background: var(--ipn); } .text-ipn { color: var(--ipn); }
+    .bg-ipn-s { background: var(--ipn-s); } .border-ipn { border-color: var(--ipn); }
+    .btn-ipn { background: var(--ipn); color: #fff; } .btn-ipn:hover { background: var(--ipn-d); }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased selection:bg-ipn selection:text-white">
-
-    <!-- Notificación flotante al copiar convenios o referencias -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 bg-ipn-dark text-white px-4 py-3 rounded-xl shadow-xl border border-ipn-gold/40 text-sm font-medium transition-all">
-        <i data-lucide="check-circle" class="w-4 h-4 text-ipn-gold shrink-0"></i>
-        <span id="toast-msg">Copiado al portapapeles</span>
+<body>
+  <header class="sticky top-0 z-40 bg-white/95 border-b border-gray-200 no-print">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
+      <a href="#inicio" class="flex items-center gap-2.5 font-extrabold text-sm text-ipn">
+        <span class="w-9 h-9 rounded-lg bg-ipn text-white flex items-center justify-center text-xs">IPN V4</span>
+        <span>CELEX CECyT No. 4 · 2026</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-5 text-sm font-medium text-gray-700">
+        <a href="#niveles" class="hover:text-ipn">17 Niveles</a>
+        <a href="#costos" class="hover:text-ipn">Costos y BBVA</a>
+        <a href="#inscripcion" class="hover:text-ipn">Inscripción</a>
+        <a href="#calculadora" class="hover:text-ipn">Calculadora</a>
+        <a href="#faq" class="hover:text-ipn">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="btn-abrir-modal" class="btn-ipn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold">Cómo Inscribirme</button>
+        <button id="btn-menu" class="md:hidden p-2 rounded-lg border border-gray-200 text-ipn" aria-label="Menú">☰</button>
+      </div>
     </div>
+    <div id="menu-movil" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-3 space-y-2 text-sm font-medium">
+      <a href="#niveles" class="block py-1">17 Niveles</a>
+      <a href="#costos" class="block py-1">Costos y BBVA</a>
+      <a href="#inscripcion" class="block py-1">Inscripción</a>
+      <a href="#calculadora" class="block py-1">Calculadora</a>
+      <a href="#faq" class="block py-1">FAQ</a>
+    </div>
+  </header>
 
-    <!-- 1. ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Identidad visual del plantel -->
-                <a href="#inicio" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-ipn text-white flex flex-col items-center justify-center font-heading shadow-sm border border-ipn-gold/40 group-hover:bg-ipn-dark transition-colors">
-                        <span class="text-[10px] font-bold tracking-widest text-ipn-gold leading-none">IPN</span>
-                        <span class="text-sm font-extrabold leading-tight">V4</span>
-                    </div>
-                    <div>
-                        <span class="font-heading font-bold text-ipn text-sm sm:text-base block leading-tight">CELEX CECyT No. 4</span>
-                        <span class="text-[11px] text-gray-500 font-medium block">"Lázaro Cárdenas" • Nuevo Ingreso</span>
-                    </div>
-                </a>
+  <section id="inicio" class="bg-ipn text-white py-12 sm:py-16 px-4">
+    <div class="max-w-5xl mx-auto text-center space-y-5">
+      <p class="inline-block bg-white/15 px-3.5 py-1 rounded-full text-xs font-semibold">CECyT No. 4 "Lázaro Cárdenas" · Convocatoria 2026</p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight">Aprende idiomas en el CELEX Voca 4</h1>
+      <p class="max-w-2xl mx-auto text-white/90 text-sm sm:text-base">
+        Guía para alumnos de nuevo ingreso: <strong>17 niveles</strong> (1 introductorio, 5 básicos, 5 intermedios y 6 avanzados), cursos bimestrales de <strong>40 horas (2 meses)</strong> por nivel y docentes certificados.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 pt-1 no-print">
+        <a href="#inscripcion" class="bg-white text-ipn font-bold px-5 py-2.5 rounded-xl text-sm">Ver pasos de inscripción</a>
+        <a href="#calculadora" class="bg-white/15 border border-white/30 text-white font-semibold px-5 py-2.5 rounded-xl text-sm">Calcular mi avance</a>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 text-left">
+        <div class="bg-white/10 rounded-xl p-3.5"><div class="text-xl font-extrabold">17 Niveles</div><div class="text-xs text-white/80">1 Intro · 5 Bás · 5 Int · 6 Ava</div></div>
+        <div class="bg-white/10 rounded-xl p-3.5"><div class="text-xl font-extrabold">40 Hrs</div><div class="text-xs text-white/80">Duración de 2 meses por nivel</div></div>
+        <div class="bg-white/10 rounded-xl p-3.5"><div class="text-xl font-extrabold">$620 / $1,600</div><div class="text-xs text-white/80">Comunidad IPN / Público general</div></div>
+        <div class="bg-white/10 rounded-xl p-3.5"><div class="text-xl font-extrabold">8:00–13:30</div><div class="text-xs text-white/80">Horario sabatino · Bimestral</div></div>
+      </div>
+    </div>
+  </section>
 
-                <!-- Enlaces de navegación para escritorio -->
-                <nav class="hidden md:flex items-center gap-5 text-sm font-medium text-gray-600">
-                    <a href="#estructura" class="hover:text-ipn transition-colors">Estructura</a>
-                    <a href="#niveles" class="hover:text-ipn transition-colors">Niveles</a>
-                    <a href="#inscripcion-pagos" class="hover:text-ipn font-semibold text-ipn transition-colors">Inscripción y Pagos</a>
-                    <a href="#horarios-faq" class="hover:text-ipn transition-colors">Horarios y FAQ</a>
-                </nav>
+  <section id="niveles" class="py-12 px-4 max-w-6xl mx-auto">
+    <div class="mb-6">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Estructura de los 17 Niveles</h2>
+      <p class="text-sm text-gray-600 mt-1">Nuevo ingreso inicia en Introductorio; cada nivel dura 2 meses (40 horas) con inscripciones bimestrales.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="border-2 border-ipn/30 bg-gray-50 rounded-2xl p-5 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase bg-ipn text-white px-2.5 py-1 rounded">Etapa 1 · 1 Nivel</span>
+          <h3 class="font-bold text-lg mt-3">Introductorio</h3>
+          <p class="text-sm text-gray-600 mt-1">Bases iniciales desde cero: pronunciación, saludos y vocabulario esencial.</p>
+        </div>
+        <div class="mt-4 pt-2 border-t text-xs font-semibold text-ipn">Nivel 1 · 2 meses (40 hrs)</div>
+      </div>
+      <div class="border border-gray-200 bg-gray-50 rounded-2xl p-5 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase bg-ipn-s text-ipn px-2.5 py-1 rounded">Etapa 2 · 5 Niveles</span>
+          <h3 class="font-bold text-lg mt-3">Básicos (1 al 5)</h3>
+          <p class="text-sm text-gray-600 mt-1">Situaciones cotidianas, rutinas, descripciones y estructuras fundamentales.</p>
+        </div>
+        <div class="mt-4 pt-2 border-t text-xs font-semibold text-ipn">Niveles 2 al 6 · 10 meses (200 hrs)</div>
+      </div>
+      <div class="border border-gray-200 bg-gray-50 rounded-2xl p-5 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase bg-ipn-s text-ipn px-2.5 py-1 rounded">Etapa 3 · 5 Niveles</span>
+          <h3 class="font-bold text-lg mt-3">Intermedios (1 al 5)</h3>
+          <p class="text-sm text-gray-600 mt-1">Conversación más fluida, opiniones, comprensión auditiva y lecturas amplias.</p>
+        </div>
+        <div class="mt-4 pt-2 border-t text-xs font-semibold text-ipn">Niveles 7 al 11 · 10 meses (200 hrs)</div>
+      </div>
+      <div class="border border-gray-200 bg-gray-50 rounded-2xl p-5 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase bg-ipn-s text-ipn px-2.5 py-1 rounded">Etapa 4 · 6 Niveles</span>
+          <h3 class="font-bold text-lg mt-3">Avanzados (1 al 6)</h3>
+          <p class="text-sm text-gray-600 mt-1">Dominio avanzado, argumentación, redacción y comprensión de alta exigencia.</p>
+        </div>
+        <div class="mt-4 pt-2 border-t text-xs font-semibold text-ipn">Niveles 12 al 17 · 12 meses (240 hrs)</div>
+      </div>
+    </div>
+  </section>
 
-                <!-- Botón de acceso rápido a inscripción y botón de menú móvil -->
-                <div class="flex items-center gap-2">
-                    <a href="#inscripcion-pagos" class="inline-flex items-center gap-1.5 bg-ipn hover:bg-ipn-dark text-white text-xs sm:text-sm font-semibold px-3.5 py-2 rounded-xl transition-colors shadow-xs">
-                        <i data-lucide="file-check-2" class="w-4 h-4 text-ipn-gold"></i>
-                        <span>Cómo Inscribirme</span>
-                    </a>
-                    <button id="btn-mobile-menu" type="button" aria-label="Abrir menú" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
+  <section id="costos" class="py-12 px-4 bg-ipn-s">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-6">Costos por Nivel y Datos de Pago BBVA</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 space-y-4">
+          <h3 class="font-bold text-lg text-ipn">Cuotas Bimestrales (40 hrs por nivel)</h3>
+          <div class="flex justify-between items-center p-3.5 rounded-xl bg-gray-50 border">
+            <div><div class="font-bold">Comunidad IPN</div><div class="text-xs text-gray-500">Alumnos, egresados, docentes y personal</div></div>
+            <div class="text-2xl font-extrabold text-ipn">$620 MXN</div>
+          </div>
+          <div class="flex justify-between items-center p-3.5 rounded-xl bg-gray-50 border">
+            <div><div class="font-bold">Público General</div><div class="text-xs text-gray-500">Externos sin vínculo vigente con el IPN</div></div>
+            <div class="text-2xl font-extrabold text-gray-900">$1,600 MXN</div>
+          </div>
         </div>
 
-        <!-- Menú desplegable para dispositivos móviles -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
-            <a href="#estructura" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-ipn-soft hover:text-ipn">Estructura Académica</a>
-            <a href="#niveles" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-ipn-soft hover:text-ipn">Los 17 Niveles y Calculadora</a>
-            <a href="#inscripcion-pagos" class="block px-3 py-2.5 rounded-lg text-sm font-bold text-ipn bg-ipn-soft/60">Inscripción y Pagos 2026</a>
-            <a href="#horarios-faq" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-ipn-soft hover:text-ipn">Horarios y Preguntas Frecuentes</a>
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 space-y-3">
+          <h3 class="font-bold text-lg text-ipn">Pago Exclusivo en BBVA</h3>
+          <div class="p-3 rounded-xl bg-gray-50 border flex items-center justify-between gap-2">
+            <div><div class="text-xs text-gray-500">Banco / Convenio</div><div class="font-bold text-base">BBVA · Convenio: <span class="text-ipn">2337274</span></div></div>
+            <button data-copy="2337274" class="btn-copy px-3 py-1.5 rounded-lg text-xs font-semibold border border-ipn text-ipn hover:bg-ipn hover:text-white no-print">Copiar</button>
+          </div>
+          <div class="p-3 rounded-xl bg-gray-50 border flex items-center justify-between gap-2">
+            <div><div class="text-xs text-gray-500">Referencia de Pago</div><div class="font-bold text-base">Referencia: <span class="text-ipn">2340001326</span></div></div>
+            <button data-copy="2340001326" class="btn-copy px-3 py-1.5 rounded-lg text-xs font-semibold border border-ipn text-ipn hover:bg-ipn hover:text-white no-print">Copiar</button>
+          </div>
+          <p class="text-xs text-gray-600 pt-1">
+            <strong>Validación y entrega:</strong> Saca <strong>3 copias</strong> de tu comprobante de pago, valídalo en <strong>Servicios Financieros</strong> y entrégalo en la <strong>Coordinación de CELEX</strong> (horario de atención: <strong>09:00 a 20:30 hrs</strong>).
+          </p>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <!-- 2. PORTADA PRINCIPAL PARA ALUMNOS DE NUEVO INGRESO -->
-    <section id="inicio" class="hero-gradient text-white overflow-hidden">
-        <div class="hero-dots">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-                <div class="max-w-3xl">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xs border border-ipn-gold/50 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-5">
-                        <span class="w-2 h-2 rounded-full bg-ipn-gold animate-pulse"></span>
-                        <span>Instituto Politécnico Nacional • Convocatoria 2026</span>
-                    </div>
+  <section id="inscripcion" class="py-12 px-4 max-w-6xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-6">6 Pasos para Inscribirte</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="p-5 rounded-2xl border bg-gray-50"><span class="text-xs font-bold text-ipn">PASO 1</span><h3 class="font-bold mt-1">Consulta la Convocatoria 2026</h3><p class="text-sm text-gray-600 mt-1">Verifica fechas bimestrales de inscripción, cupo y modalidad sabatina (8:00 a 13:30 hrs).</p></div>
+      <div class="p-5 rounded-2xl border bg-gray-50"><span class="text-xs font-bold text-ipn">PASO 2</span><h3 class="font-bold mt-1">Identifica tu tarifa</h3><p class="text-sm text-gray-600 mt-1">Selecciona <strong>$620</strong> si eres Comunidad IPN o <strong>$1,600</strong> para Público General.</p></div>
+      <div class="p-5 rounded-2xl border bg-gray-50"><span class="text-xs font-bold text-ipn">PASO 3</span><h3 class="font-bold mt-1">Realiza el pago en BBVA</h3><p class="text-sm text-gray-600 mt-1">Paga exclusivamente en BBVA usando Convenio <strong>2337274</strong> y Referencia <strong>2340001326</strong>.</p></div>
+      <div class="p-5 rounded-2xl border bg-gray-50"><span class="text-xs font-bold text-ipn">PASO 4</span><h3 class="font-bold mt-1">Saca 3 copias del recibo</h3><p class="text-sm text-gray-600 mt-1">Imprime o saca tres copias legibles de tu comprobante de pago antes de acudir al plantel.</p></div>
+      <div class="p-5 rounded-2xl border bg-gray-50"><span class="text-xs font-bold text-ipn">PASO 5</span><h3 class="font-bold mt-1">Valida en Servicios Financieros</h3><p class="text-sm text-gray-600 mt-1">Acude a Servicios Financieros del CECyT No. 4 para validar tu pago conforme al trámite indicado.</p></div>
+      <div class="p-5 rounded-2xl border bg-gray-50"><span class="text-xs font-bold text-ipn">PASO 6</span><h3 class="font-bold mt-1">Entrega en Coordinación CELEX</h3><p class="text-sm text-gray-600 mt-1">Completa tu registro en Coordinación de CELEX de <strong>09:00 a 20:30 hrs</strong> y conserva tu comprobante.</p></div>
+    </div>
+  </section>
 
-                    <h1 class="font-heading text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
-                        CELEX CECyT No. 4 <span class="text-ipn-gold">"Lázaro Cárdenas"</span>
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-white/90 leading-relaxed mb-7">
-                        ¡Bienvenido a Voca 4! Si eres de nuevo ingreso y quieres aprender inglés desde cero o avanzar de nivel sin que choque con tus materias de lunes a viernes, los <strong>Cursos Extracurriculares de Lenguas Extranjeras (CELEX)</strong> son tu espacio oficial dentro del plantel. Aquí encontrarás toda la información clara para inscribirte paso a paso.
-                    </p>
-
-                    <div class="flex flex-wrap gap-3 sm:gap-4 mb-10">
-                        <a href="#inscripcion-pagos" class="inline-flex items-center justify-center gap-2 bg-white text-ipn font-bold px-6 py-3.5 rounded-xl shadow-lg hover:bg-gray-100 transition-all text-sm sm:text-base">
-                            <i data-lucide="clipboard-list" class="w-5 h-5"></i>
-                            <span>Ver proceso de inscripción</span>
-                        </a>
-                        <a href="#estructura" class="inline-flex items-center justify-center gap-2 bg-ipn-dark/90 hover:bg-ipn-dark text-white border border-ipn-gold/60 font-semibold px-6 py-3.5 rounded-xl transition-all text-sm sm:text-base">
-                            <i data-lucide="layers" class="w-5 h-5 text-ipn-gold"></i>
-                            <span>Explorar los 17 niveles</span>
-                        </a>
-                    </div>
-
-                    <!-- Tarjetas clave del programa -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                        <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-4 flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-ipn-gold/20 border border-ipn-gold/40 flex items-center justify-center text-ipn-gold shrink-0">
-                                <i data-lucide="layers" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="font-heading font-extrabold text-xl leading-none">17 Niveles</p>
-                                <p class="text-xs text-white/80 mt-1">1 Introd. • 5 Básicos • 5 Interm. • 6 Avanz.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-4 flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-ipn-gold/20 border border-ipn-gold/40 flex items-center justify-center text-ipn-gold shrink-0">
-                                <i data-lucide="calendar-clock" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="font-heading font-extrabold text-xl leading-none">2 Meses / Nivel</p>
-                                <p class="text-xs text-white/80 mt-1">40 horas por nivel • Inscripción bimestral</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-4 flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-ipn-gold/20 border border-ipn-gold/40 flex items-center justify-center text-ipn-gold shrink-0">
-                                <i data-lucide="sun" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="font-heading font-extrabold text-xl leading-none">8:00 a 13:30 hrs</p>
-                                <p class="text-xs text-white/80 mt-1">Curso Sabatino de Inglés</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section id="calculadora" class="py-12 px-4 bg-gray-50 border-y border-gray-200">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 sm:p-8 border border-gray-200">
+      <h2 class="text-2xl font-extrabold text-gray-900">Calculadora de Avance CELEX</h2>
+      <p class="text-sm text-gray-600 mt-1">Calcula cuántos niveles vas a cursar, el tiempo total en meses y horas, y el costo estimado.</p>
+      <div class="grid sm:grid-cols-3 gap-4 mt-5">
+        <div>
+          <label for="calc-niveles" class="block text-xs font-bold text-gray-700 mb-1">Niveles a cursar (1 a 17)</label>
+          <input id="calc-niveles" type="number" min="1" max="17" value="6" class="w-full border rounded-xl px-3 py-2 text-sm" />
         </div>
-    </section>
+        <div>
+          <label for="calc-tarifa" class="block text-xs font-bold text-gray-700 mb-1">Tipo de alumno</label>
+          <select id="calc-tarifa" class="w-full border rounded-xl px-3 py-2 text-sm">
+            <option value="620">Comunidad IPN ($620)</option>
+            <option value="1600">Público General ($1,600)</option>
+          </select>
+        </div>
+        <div class="flex items-end">
+          <button id="btn-calcular" type="button" class="w-full btn-ipn py-2.5 px-4 rounded-xl text-sm font-semibold">Calcular</button>
+        </div>
+      </div>
+      <div id="calc-resultado" class="grid grid-cols-3 gap-3 mt-6 pt-5 border-t text-center">
+        <div class="p-3 rounded-xl bg-ipn-s"><div class="text-xs text-gray-600">Tiempo total</div><div id="res-meses" class="text-lg font-extrabold text-ipn">12 meses</div></div>
+        <div class="p-3 rounded-xl bg-ipn-s"><div class="text-xs text-gray-600">Horas clase</div><div id="res-horas" class="text-lg font-extrabold text-ipn">240 hrs</div></div>
+        <div class="p-3 rounded-xl bg-ipn-s"><div class="text-xs text-gray-600">Inversión total</div><div id="res-costo" class="text-lg font-extrabold text-ipn">$3,720</div></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- 3. ESTRUCTURA DEL PROGRAMA, PROFESORES, 17 NIVELES Y CALCULADORA -->
-    <section id="estructura" class="py-12 sm:py-16 bg-white border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mb-10">
-                <span class="inline-block text-ipn font-bold text-xs uppercase tracking-wider bg-ipn-soft border border-ipn/15 px-3 py-1 rounded-full">
-                    Información del Programa • Nuevo Ingreso
-                </span>
-                <h2 class="font-heading text-2xl sm:text-4xl font-bold text-gray-900 mt-3 mb-3">
-                    Estructura Académica y Niveles
-                </h2>
-                <p class="text-gray-600 text-base leading-relaxed">
-                    El programa de inglés en el CELEX del CECyT No. 4 está organizado por bimestres, con inscripciones cada dos meses y clases sabatinas pensadas para acompañarte durante tu bachillerato.
-                </p>
-            </div>
+  <section id="faq" class="py-12 px-4 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-extrabold text-gray-900 mb-5">Preguntas Frecuentes</h2>
+    <div class="space-y-3">
+      <div class="border rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-4 py-3.5 font-semibold text-sm flex justify-between items-center bg-gray-50">
+          <span>¿Desde qué nivel entra un alumno de nuevo ingreso?</span><span>+</span>
+        </button>
+        <div class="faq-panel hidden px-4 py-3 text-sm text-gray-600 bg-white">El programa consta de 17 niveles (1 introductorio, 5 básicos, 5 intermedios y 6 avanzados) y nuevo ingreso inicia en el nivel Introductorio.</div>
+      </div>
+      <div class="border rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-4 py-3.5 font-semibold text-sm flex justify-between items-center bg-gray-50">
+          <span>¿Cuánto dura cada nivel y en qué horario se cursa?</span><span>+</span>
+        </button>
+        <div class="faq-panel hidden px-4 py-3 text-sm text-gray-600 bg-white">Cada nivel dura 2 meses (40 horas) con inscripciones bimestrales y horario sabatino de 8:00 a 13:30 hrs.</div>
+      </div>
+      <div class="border rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-4 py-3.5 font-semibold text-sm flex justify-between items-center bg-gray-50">
+          <span>¿Dónde se paga y qué necesito entregar?</span><span>+</span>
+        </button>
+        <div class="faq-panel hidden px-4 py-3 text-sm text-gray-600 bg-white">El pago se realiza en BBVA (Convenio 2337274, Referencia 2340001326), se sacan 3 copias, se valida en Servicios Financieros y se entrega en Coordinación de CELEX de 09:00 a 20:30 hrs.</div>
+      </div>
+    </div>
+  </section>
 
-            <!-- Profesores certificados + Duración e inscripciones bimestrales -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-                <div class="lg:col-span-2 bg-gradient-to-br from-ipn to-ipn-dark text-white rounded-2xl p-6 sm:p-8 shadow-md flex flex-col sm:flex-row items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-white/15 border border-ipn-gold/40 flex items-center justify-center shrink-0">
-                        <i data-lucide="award" class="w-8 h-8 text-ipn-gold"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-heading text-xl font-bold mb-2">
-                            Profesores certificados y capacitados
-                        </h3>
-                        <p class="text-white/90 text-sm sm:text-base leading-relaxed">
-                            Las clases son impartidas por docentes certificados y capacitados para guiar a estudiantes de nuevo ingreso desde las bases hasta niveles avanzados, fomentando la comprensión auditiva, expresión oral, lectura y escritura bajo los lineamientos del IPN.
-                        </p>
-                    </div>
-                </div>
+  <footer class="bg-ipn text-white py-8 px-4 text-center text-xs sm:text-sm space-y-1">
+    <div class="font-bold">CELEX · CECyT No. 4 "Lázaro Cárdenas" (IPN)</div>
+    <div class="text-white/80">17 Niveles · 40 hrs (2 meses) por nivel · Sábados 8:00 a 13:30 hrs · Coordinación CELEX 09:00 a 20:30 hrs</div>
+  </footer>
 
-                <div class="bg-ipn-soft/70 border border-ipn/20 rounded-2xl p-6 flex flex-col justify-center">
-                    <div class="flex items-center gap-2.5 text-ipn font-heading font-bold text-lg mb-2">
-                        <i data-lucide="clock" class="w-5 h-5 text-ipn-gold"></i>
-                        <span>Duración, Bimestres y Horario</span>
-                    </div>
-                    <ul class="space-y-2.5 text-sm text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold text-ipn">•</span>
-                            <span><strong>2 meses (40 horas) por nivel:</strong> Cada nivel se cursa en un bimestre con 40 horas de instrucción.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold text-ipn">•</span>
-                            <span><strong>Inscripciones bimestrales:</strong> Al concluir cada bimestre se abre convocatoria para avanzar o inscribirte.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold text-ipn">•</span>
-                            <span><strong>Horario sabatino:</strong> Sábados de <strong>8:00 a 13:30 hrs</strong>.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <div id="modal-guia" class="fixed inset-0 z-50 hidden bg-black/60 items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4">
+      <div class="flex items-center justify-between border-b pb-3">
+        <h3 class="font-extrabold text-lg text-ipn">Resumen Rápido — Convocatoria 2026</h3>
+        <button id="btn-cerrar-modal" type="button" class="text-gray-500 font-bold px-2">✕</button>
+      </div>
+      <div class="text-sm text-gray-700 space-y-2">
+        <p><strong>Niveles y duración:</strong> 17 niveles (1 Intro, 5 Básicos, 5 Intermedios, 6 Avanzados) · 2 meses (40 hrs) cada uno · Sábados 8:00–13:30 hrs.</p>
+        <p><strong>Costos:</strong> $620 Comunidad IPN · $1,600 Público General.</p>
+        <p><strong>BBVA:</strong> Convenio <strong>2337274</strong> · Referencia <strong>2340001326</strong>.</p>
+        <p><strong>Trámite:</strong> 3 copias del recibo → Servicios Financieros → Coordinación CELEX (09:00 a 20:30 hrs).</p>
+      </div>
+      <div class="flex justify-end gap-2 pt-2 no-print">
+        <button id="btn-imprimir" type="button" class="btn-ipn px-4 py-2 rounded-xl text-xs font-semibold">Imprimir / Guardar PDF</button>
+      </div>
+    </div>
+  </div>
 
-            <!-- Desglose de los 17 niveles: 1 introductorio, 5 básicos, 5 intermedios, 6 avanzados -->
-            <div id="niveles" class="scroll-mt-24">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-2">
-                    <div>
-                        <h3 class="font-heading text-xl sm:text-2xl font-bold text-gray-900">
-                            Los 17 Niveles del Programa
-                        </h3>
-                        <p class="text-sm text-gray-600">Distribuidos en 1 introductorio, 5 básicos, 5 intermedios y 6 avanzados.</p>
-                    </div>
-                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-ipn bg-ipn-soft px-3 py-1.5 rounded-lg border border-ipn/15">
-                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-                        Nuevo ingreso inicia en Introductorio
-                    </span>
-                </div>
+  <script>
+    document.getElementById('btn-menu').addEventListener('click', () => {
+      document.getElementById('menu-movil').classList.toggle('hidden');
+    });
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-                    <!-- 1 Introductorio -->
-                    <div class="card-elevate bg-gray-50 rounded-2xl p-5 border-2 border-ipn/30 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-bold uppercase bg-ipn text-white px-2.5 py-1 rounded-md">Etapa 1</span>
-                                <span class="font-heading text-2xl font-extrabold text-ipn">1 Nivel</span>
-                            </div>
-                            <h4 class="font-heading font-bold text-lg text-gray-900 mb-2">1 Introductorio</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                Ideal para iniciar desde cero: fonética básica, saludos, vocabulario fundamental y estructuras iniciales del idioma.
-                            </p>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-200 text-xs font-semibold text-ipn">
-                            Nivel 1 • 2 meses (40 hrs)
-                        </div>
-                    </div>
+    document.querySelectorAll('.btn-copy').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-copy');
+        if (navigator.clipboard) navigator.clipboard.writeText(val).catch(() => {});
+        btn.textContent = 'Copiado';
+        setTimeout(() => { btn.textContent = 'Copiar'; }, 1500);
+      });
+    });
 
-                    <!-- 5 Básicos -->
-                    <div class="card-elevate bg-gray-50 rounded-2xl p-5 border border-gray-200 hover:border-ipn/40 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-bold uppercase bg-ipn-soft text-ipn px-2.5 py-1 rounded-md">Etapa 2</span>
-                                <span class="font-heading text-2xl font-extrabold text-ipn">5 Niveles</span>
-                            </div>
-                            <h4 class="font-heading font-bold text-lg text-gray-900 mb-2">5 Básicos</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                Comunicación en situaciones cotidianas, descripción de actividades, tiempos verbales esenciales y comprensión de textos breves.
-                            </p>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-200 text-xs font-semibold text-ipn">
-                            Niveles 2 al 6 • 10 meses (200 hrs)
-                        </div>
-                    </div>
+    function calcularAvance() {
+      let n = parseInt(document.getElementById('calc-niveles').value, 10) || 1;
+      if (n < 1) n = 1;
+      if (n > 17) n = 17;
+      document.getElementById('calc-niveles').value = n;
+      const tarifa = parseInt(document.getElementById('calc-tarifa').value, 10) || 620;
+      document.getElementById('res-meses').textContent = (n * 2) + ' meses';
+      document.getElementById('res-horas').textContent = (n * 40) + ' hrs';
+      document.getElementById('res-costo').textContent = '$' + (n * tarifa).toLocaleString('es-MX');
+    }
+    document.getElementById('btn-calcular').addEventListener('click', calcularAvance);
 
-                    <!-- 5 Intermedios -->
-                    <div class="card-elevate bg-gray-50 rounded-2xl p-5 border border-gray-200 hover:border-ipn/40 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-bold uppercase bg-ipn-soft text-ipn px-2.5 py-1 rounded-md">Etapa 3</span>
-                                <span class="font-heading text-2xl font-extrabold text-ipn">5 Niveles</span>
-                            </div>
-                            <h4 class="font-heading font-bold text-lg text-gray-900 mb-2">5 Intermedios</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                Mayor fluidez en conversación, expresión de opiniones, comprensión auditiva y lectora más amplia y redacción estructurada.
-                            </p>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-200 text-xs font-semibold text-ipn">
-                            Niveles 7 al 11 • 10 meses (200 hrs)
-                        </div>
-                    </div>
+    document.querySelectorAll('.faq-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const panel = btn.nextElementSibling;
+        panel.classList.toggle('hidden');
+      });
+    });
 
-                    <!-- 6 Avanzados -->
-                    <div class="card-elevate bg-gray-50 rounded-2xl p-5 border border-gray-200 hover:border-ipn/40 flex flex-col justify-between">
-                        <div>
-   
+    const modal = document.getElementById('modal-guia');
+    document.getElementById('btn-abrir-modal').addEventListener('click', () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+    document.getElementById('btn-cerrar-modal').addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+    document.getElementById('btn-imprimir').addEventListener('click', () => window.print());
+  </script>
+</body>
+                </html>
+                
